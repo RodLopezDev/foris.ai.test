@@ -48,8 +48,8 @@ coverage html
 
 # Documentación
 
-- [Esqueleto solución](./docs/1.primeros-pasos.md)!
-- [Primera versión](./docs/2.primer-iteracion.md)!
-- [Mejorando solución, event map](./docs/3.refactor.md)!
-- [Desacoplando reporteador e input de datos](./docs/4.refactor-v2.md)!
-- [Strategy para input de datos](./docs/5.input-data.md)!
+- [Esqueleto solución](./development/1.primeros-pasos.md)
+- [Primera versión](./development/2.primer-iteracion.md)
+- [Mejorando solución, event map](./development/3.refactor.md)
+- [Desacoplando reporteador e input de datos](./development/4.refactor-v2.md)
+- [Strategy para input de datos](./development/5.input-data.md)

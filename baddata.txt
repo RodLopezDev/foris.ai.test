@@ -1,7 +1,0 @@
-Student Marco
-Student David
-Student Fran
-Presence Marco 109:0210:17R100
-Presence Marco 3 12:05 R205
-Presence David 5 14:02
-Presence Lucho 14:02 15:26 F505
