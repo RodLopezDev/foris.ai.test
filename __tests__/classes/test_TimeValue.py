@@ -1,4 +1,3 @@
-import sys
 import pytest
 from src.classes.TimeValue import TimeValue
 
