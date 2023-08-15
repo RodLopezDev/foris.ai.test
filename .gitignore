@@ -1,4 +1,6 @@
 venv
 old
 .pytest_cache
+.coverage
+htmlcov
 **/__pycache__

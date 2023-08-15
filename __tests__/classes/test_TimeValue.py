@@ -2,7 +2,7 @@ import pytest
 from src.classes.TimeValue import TimeValue
 
 
-class TestProcessor:
+class TestPresence:
     def test_validate_Value_0(self):
         time_value = TimeValue('00:00')
         assert time_value.minutes == 0

@@ -25,13 +25,25 @@ python main.py data.txt
 Instalar pytest
 
 ```
-pip install pytest
+pip install pytest pytest-cov coverage
 ```
 
 Correr tester
 
 ```
 pytest
+```
+
+Correr test con coverage
+
+```
+pytest --cov=.
+```
+
+Correr test con coverage
+
+```
+pytest --cov=.
 ```
 
 # Documentación
