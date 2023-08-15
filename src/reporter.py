@@ -3,7 +3,9 @@ from src.classes.StudentPresence import StudentPresence
 
 
 def PrintReport(state: Dict[str, StudentPresence]):
-    for name, presences in state.items():
+    sorted_data = sorted(
+        state.items(), key=lambda item: item[1].totalMinutes(), reverse=True)
+    for name, presences in sorted_data:
         if not presences.total():
             print(f"{name}: 0 minutes")
             continue
