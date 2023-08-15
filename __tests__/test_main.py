@@ -4,7 +4,7 @@ from main import main
 
 class TestMain:
     def test_validate_Single(self, capsys):
-        content = """
+        def getContent(): return """
             Student Marco
             Student David
             Student Fran
@@ -16,17 +16,17 @@ class TestMain:
 David: 104 minutes in 1 days
 Fran: 0 minutes"""
 
-        main(content=content)
+        main(getContent=getContent)
         captured = capsys.readouterr()
         printResult = captured.out.strip()
         assert printResult == result.strip()
 
     def test_validate_WithError(self):
-        content = """
+        def getContent(): return """
             Student Marco
             Student David
             Student Fran
             RareCase Marco 1 09:02 10:17 R100
         """
         with pytest.raises(Exception, match='NOT_IMPLEMENTED'):
-            main(content=content)
+            main(getContent=getContent)

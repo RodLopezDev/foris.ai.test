@@ -8,10 +8,11 @@ from src.classes.StudentPresence import StudentPresence
 
 def main(
     *,
-    content: str = getInputData(),
+    getContent: Callable[[], str] = getInputData,
     reporter: Callable[[Dict[str, StudentPresence]], None] = PrintReport
 ):
     # 1. Get data
+    content = getContent()
     lines = content.splitlines()
 
     globalState: Dict[str, StudentPresence] = {}

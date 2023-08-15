@@ -20,32 +20,24 @@ Cargar el nombre del archivo como parámetro
 python main.py data.txt
 ```
 
+# Tests
 
-```python
-def main():
-    # 1. Get data
-    content = """
-        Student Marco
-        ...
-    """
-    lines = content.splitlines()
+Instalar pytest
 
-    # 2. Set a global state to persist data
-    state = {}
-
-    # 3. Process data
-    for line in lines:
-        if not line.strip():
-            continue
-        items = line.strip().split(" ")
-        # Do something <- make algorithm this
-        print(state, items)
-
-    # 4. Visualize data result
-    reporter = ReportFormat(state) # <- Implement solut
-    print(reporter)
-
-
-if __name__ == "__main__":
-    main()
 ```
+pip install pytest
+```
+
+Correr tester
+
+```
+pytest
+```
+
+# Documentación
+
+- [Esqueleto solución](./docs/1.primeros-pasos.md)!
+- [Primera versión](./docs/2.primer-iteracion.md)!
+- [Mejorando solución, event map](./docs/3.refactor.md)!
+- [Desacoplando reporteador e input de datos](./docs/4.refactor-v2.md)!
+- [Strategy para input de datos](./docs/5.input-data.md)!
