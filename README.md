@@ -37,13 +37,13 @@ pytest
 Correr test con coverage
 
 ```
-pytest --cov=.
+coverage run -m pytest
 ```
 
-Correr test con coverage
+Visualize HTML Coverage
 
 ```
-pytest --cov=.
+coverage html
 ```
 
 # Documentación

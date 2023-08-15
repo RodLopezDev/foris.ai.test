@@ -6,7 +6,7 @@ from src.classes.StudentPresence import StudentPresence
 
 def add_student_event(state: Dict[str, StudentPresence], items: list[str]):
     if len(items) != 1:
-        raise Exception('Inconsistent data')
+        raise Exception('INCONSISTE_DATA::Student')
 
     student = items.pop(0)
     state[student] = StudentPresence()
@@ -14,7 +14,7 @@ def add_student_event(state: Dict[str, StudentPresence], items: list[str]):
 
 def add_presence_event(state: Dict[str, StudentPresence], items: list[str]):
     if len(items) != 5:
-        raise Exception('Inconsistent data')
+        raise Exception('INCONSISTE_DATA::Presence')
 
     student = items.pop(0)
     day = items[0]

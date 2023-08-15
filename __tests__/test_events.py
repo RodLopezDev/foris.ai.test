@@ -37,13 +37,13 @@ class TestEvents:
         assert state.get('Marcos').total() == 2
         assert state.get('Marcos').totalMinutes() == 90 + 335
 
-    def test_should_be_run_Presence_case_with_error(self):
+    def test_should_be_run_Student_case_with_error(self):
         case = 'Student'
-        row = []
+        row = ['', '', '']
 
         state: Dict[str, StudentPresence] = {}
 
-        with pytest.raises(Exception, match='Inconsistent data'):
+        with pytest.raises(Exception, match='INCONSISTE_DATA::Student'):
             map_of_events.get(case)(state, row)
 
     def test_should_be_run_Presence_case_with_error(self):
@@ -52,7 +52,7 @@ class TestEvents:
 
         state: Dict[str, StudentPresence] = {'Marcos': StudentPresence()}
 
-        with pytest.raises(Exception, match='Inconsistent data'):
+        with pytest.raises(Exception, match='INCONSISTE_DATA::Presence'):
             map_of_events.get(case)(state, row)
 
     def test_should_be_run_Presence_case_corner_case(self):

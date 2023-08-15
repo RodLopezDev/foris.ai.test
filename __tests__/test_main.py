@@ -1,22 +1,15 @@
 import pytest
 from main import main
+from src.input import getMockData
 
 
 class TestMain:
     def test_validate_Single(self, capsys):
-        def getContent(): return """
-            Student Marco
-            Student David
-            Student Fran
-            Presence Marco 1 09:02 10:17 R100
-            Presence Marco 3 10:58 12:05 R205
-            Presence David 5 14:02 15:46 F505
-        """
         result = """Marco: 142 minutes in 2 days
 David: 104 minutes in 1 days
 Fran: 0 minutes"""
 
-        main(getContent=getContent)
+        main(getContent=getMockData)
         captured = capsys.readouterr()
         printResult = captured.out.strip()
         assert printResult == result.strip()
@@ -30,3 +23,11 @@ Fran: 0 minutes"""
         """
         with pytest.raises(Exception, match='NOT_IMPLEMENTED'):
             main(getContent=getContent)
+
+    def test_validate_CornerCase(self):
+        def getContent(): return """
+            Student Marco
+            Student David
+            Presence Marco 1 X X R100
+        """
+        main(getContent=getContent)

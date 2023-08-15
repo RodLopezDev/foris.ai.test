@@ -31,7 +31,7 @@ class StrategyArgument(AbstractStrategy):
     name = 'ArgumentFile'
 
     def Validate(self) -> bool:
-        return not len(sys.argv) != 2
+        return len(sys.argv) == 2
 
     def execute(self) -> str:
         input_file_name = sys.argv[1]
@@ -53,9 +53,9 @@ def StrategyManagerFactory(strategies: list[AbstractStrategy]) -> Callable[[], s
                 print(f"Get data from {strategy.name} strategy")
                 content = strategy.execute()
                 if not content:
-                    raise Exception('Content not found')
+                    raise Exception(f'CONTENT_NOT_FOUND::{strategy.name}')
                 return content
-        raise Exception('Strategy not found')
+        raise Exception('STRATEGY_NOT_FOUND')
     return getData
 
 
