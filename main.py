@@ -15,6 +15,7 @@ def main(
     content = getContent()
     lines = content.splitlines()
 
+    errors = []
     globalState: Dict[str, StudentPresence] = {}
 
     # 2. Process data
@@ -26,7 +27,11 @@ def main(
 
         if not map_of_events.get(action):
             raise Exception('NOT_IMPLEMENTED')
-        map_of_events.get(action)(globalState, items)
+
+        try:
+            map_of_events.get(action)(globalState, items)
+        except:
+            errors.append(line)
 
     # 3. Visualize data result
     reporter(globalState)
